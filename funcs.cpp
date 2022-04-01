@@ -23,6 +23,8 @@ double distance(std::vector <double> v1, std::vector <double> v2, int len){
   return distance;
 }
 
+
+
 std::string solve(std::string encrypted_string){
   // for each of the 26 rotations of encrypted string:
   std::vector <double> englishFrequencies = {0.082, 0.015, 0.027, 0.047,
@@ -55,7 +57,7 @@ std::string solve(std::string encrypted_string){
     //letterFrequencies.push_back(0);
 
     rotated = encryptCaesar(encrypted_string, i);
-
+    
     //if there is that letter in the string -> count how many there are
     for(int j = 0; j < encrypted_string.length(); j++){
       
@@ -65,7 +67,7 @@ std::string solve(std::string encrypted_string){
 	//std::cout << lowerAlphabet.find(rotated[j]) << std::endl;
 	characters += 1;
       }else if(upperAlphabet.find(rotated[j]) != std::string::npos){
-	 letterFrequencies[upperAlphabet.find(rotated[j])] += 1;
+	letterFrequencies[upperAlphabet.find(rotated[j])] += 1;
 	characters += 1;
 	}
       }
